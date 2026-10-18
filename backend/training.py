@@ -1,17 +1,23 @@
-import pandas as pd 
-import pickle 
-from sklearn.linear_model import LinearRegression 
+"""Train the linear regression model and save it to backend/models/model.pkl."""
 
-#load data 
-df = pd.read_csv(r"C:\Users\kotap\Desktop\CI_CD_pipeline\data\data.csv")
+import pickle
+from pathlib import Path
 
-x= df[["area","bedrooms"]]
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+BACKEND_DIR = Path(__file__).resolve().parent
+DATA_PATH = BACKEND_DIR.parent / "data" / "data.csv"
+MODEL_PATH = BACKEND_DIR / "models" / "model.pkl"
+
+df = pd.read_csv(DATA_PATH)
+X = df[["area", "bedrooms"]]
 y = df["price"]
 
-#train model
 model = LinearRegression()
-model.fit(x,y)
+model.fit(X, y)
 
-# #save model 
-with open("models\model.pkl","wb") as f:
-    pickle.dump(model,f)
+MODEL_PATH.parent.mkdir(exist_ok=True)
+with open(MODEL_PATH, "wb") as f:
+    pickle.dump(model, f)
+print(f"Saved model to {MODEL_PATH}")

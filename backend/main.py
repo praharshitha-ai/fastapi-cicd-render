@@ -23,7 +23,7 @@ MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/model.pkl"))
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://git-cicd-1-ngtw.onrender.com"],  # Or ["https://git-cicd-1-ngtw.onrender.com"]
+    allow_origins=["https://git-cicd-1-ngtw.onrender.com"],  # Streamlit frontend on Render
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

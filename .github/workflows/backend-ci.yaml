@@ -37,7 +37,3 @@ jobs:
       - name: Trigger Render Deploy
         run: |
           curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
-
-#trigger
-#https://cicd-pipeline-7tcq.onrender.com/predict-postman-post
-#https://cicd-pipeline-7tcq.onrender.com-GET-postman

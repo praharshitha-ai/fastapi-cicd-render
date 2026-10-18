@@ -31,7 +31,7 @@ if st.button("Predict Price"):
             st.success(f"Estimated Price: Rs.{price:,.2f}")
 
         else:
-            st.error(" Prediction failed, Chcek API.")
+            st.error("Prediction failed. Check the API.")
 
     except requests.exceptions.ConnectionError:
         st.error("Cannot connect to FastAPI backend. Is it running?")
