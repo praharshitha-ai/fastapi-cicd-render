@@ -2,7 +2,7 @@
 
 A small prediction service built to practise the full path from a code change to a live deployment. Every push to `main` runs the backend tests in GitHub Actions, and only when they pass does the workflow trigger a deploy to Render.
 
-- **Live app:** https://git-cicd-1-ngtw.onrender.com (Streamlit frontend)
+- **Live app:** https://cicd-pipeline-frontend-qtl0.onrender.com (Streamlit frontend)
 - **Live API:** https://cicd-pipeline-7tcq.onrender.com (FastAPI backend)
 
 Both run on Render's free plan, so the first request after a quiet period can take up to a minute while the service wakes up.
